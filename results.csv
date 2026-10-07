@@ -1,0 +1,8 @@
+Text,Classification,Risk Score
+.\ml_classifier.py: Possible hardcoded password,Suspicious,50
+.\module3_scanner.py: Possible private key,Suspicious,20
+.\module3_scanner.py: Suspicious command found,Suspicious,20
+.\__pycache__\module3_scanner.py: Possible private key,Suspicious,20
+.\__pycache__\module3_scanner.py: Suspicious command found,Suspicious,20
+.\__pycache__\test.txt: Possible hardcoded password,Suspicious,50
+.\__pycache__\test.txt: Suspicious command found,Suspicious,20
