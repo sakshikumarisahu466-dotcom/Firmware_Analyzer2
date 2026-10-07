@@ -1,63 +1,85 @@
-# Module 4 – ML Classifier & Risk Scoring
 
-## Purpose
-This module uses Machine Learning to classify firmware-related
-strings as Normal or Suspicious and calculates a security risk score.
+# Firmware Analyzer
 
-## Technologies Used
+## 📌 Project Overview
+
+Firmware Analyzer is a cybersecurity tool designed to analyze firmware files and identify possible security risks.
+
+The project combines firmware upload, hash verification, firmware extraction, static security scanning, and machine-learning-based risk analysis into one system.
+
+## 🚀 Features
+
+- Firmware file upload
+- SHA-256 hash verification
+- Firmware extraction using Binwalk
+- Static scanning for suspicious strings
+- Detection of hardcoded passwords and API keys
+- Machine-learning-based analysis
+- Risk scoring
+- Analysis results and reports
+
+## 🧩 Project Modules
+
+### Module 1 — Frontend
+Provides the user interface for uploading firmware files, entering a hash, and viewing analysis results.
+
+Technology:
 - Python
-- Pandas
+- Streamlit
+
+### Module 2 — Core Backend
+Handles firmware hash verification and extraction.
+
+Main functions:
+- SHA-256 hash checking
+- Firmware extraction using Binwalk
+
+### Module 3 — Static Regex Scanner
+Scans extracted firmware files for suspicious patterns such as:
+
+- Hardcoded passwords
+- API keys
+- Suspicious credentials
+- Possible backdoor-related strings
+
+### Module 4 — ML Classifier & Risk Scoring
+Uses machine learning to identify anomalous code strings and generate a security risk score.
+
+Technology:
+- Python
 - Scikit-learn
-- TF-IDF Vectorizer
-- Logistic Regression
+- Pandas
 
-## Input
-The module reads suspicious/normal strings from:
+## 🛠️ Requirements
 
-scanner_output.txt
+Install the required Python packages using:
 
-## Processing
-1. Text data is converted into numerical features using TF-IDF.
-2. Logistic Regression classifies each string as Normal or Suspicious.
-3. Risk points are assigned based on suspicious patterns.
-4. A final risk score is calculated.
-5. The final risk level is displayed.
-
-## Risk Levels
-- LOW
-- MEDIUM
-- HIGH
-
-## Output
-The results are displayed in the terminal and saved to:
-
-results.csv
-
-## How to Run
-
-Install required libraries:
-
+```bash
 pip install -r requirements.txt
 
-Then run:
+## ▶️ How to Run
 
-python ml_classifier.py
+1. Install the required packages:
 
-## Example
-The system can detect patterns such as:
-- password
-- api_key
-- secret_key
-- backdoor
+```bash
+pip install -r requirements.txt
 
-and assign an appropriate risk score.
+2. Run the Streamlit application :
 
-## Module Output
-The module provides:
-- Classification: Normal / Suspicious
-- Individual Risk Score
-- Total Items Scanned
-- Suspicious Items
-- Normal Items
-- Final Risk Score
-- Final Risk Level
+   python -m streamlit run Module1.py
+
+3. Open the local URL shown in the terminal
+
+  Project Structure---
+
+   Firmware_Analyzer2/
+├── Module1.py
+├── module2_extractor.py
+├── module3_scanner.py
+├── Module4_ml_classifier.py
+├── firmware_test.bin
+├── requirements.txt
+├── results.csv
+├── scanner_output.txt
+├── README.md
+└── Module4_ML/
